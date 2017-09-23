@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Created by zahmed on 9/23/17.
  */
 @SpringBootApplication
-public class Application {
+public class GundamModelKitApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(GundamModelKitApplication.class, args);
     }
 }
