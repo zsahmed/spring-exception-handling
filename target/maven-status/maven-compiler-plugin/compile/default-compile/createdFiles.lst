@@ -1,4 +1,5 @@
-com/zakahmed/app/GundamModelKitApplication.class
+com/zakahmed/service/GundamModelKitService.class
+com/zakahmed/GundamModelKitApplication.class
 com/zakahmed/dao/GundamModelKitRepository.class
 com/zakahmed/exceptions/CustomExceptionHandler.class
 com/zakahmed/exceptions/GundamModelKitNotFoundException.class
