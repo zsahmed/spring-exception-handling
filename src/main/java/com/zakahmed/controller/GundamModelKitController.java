@@ -4,10 +4,7 @@ import com.zakahmed.domain.GundamModelKit;
 import com.zakahmed.service.GundamModelKitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
 import java.util.List;
@@ -37,19 +34,9 @@ public class GundamModelKitController {
         return gundamModelKitService.getModelById(modelKitId);
     }
 
-
-
     @RequestMapping(value="/add", method = RequestMethod.POST)
-    public boolean addGunplaKit() {
-        GundamModelKit model = new GundamModelKit();
-        model.setTitle("Zaku");
-        model.setImageUrl("image");
-        model.setLink("link");
-        model.setPrice("10");
-        model.setRelease_date("October");
-        model.setSeries("Mobile Suit Gundam");
-
-        gundamModelKitService.save(model);
+    public boolean addGunplaKit(@RequestBody GundamModelKit modelKit) {
+        gundamModelKitService.save(modelKit);
         return true;
     }
 
