@@ -4,11 +4,12 @@ import com.zakahmed.domain.GundamModelKit;
 import com.zakahmed.service.GundamModelKitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 /**
@@ -16,8 +17,8 @@ import java.util.List;
  */
 @RestController
 @Slf4j
-@RequestMapping(Resource.API_URL)
-public class Resource {
+@RequestMapping(GundamModelKitController.API_URL)
+public class GundamModelKitController {
     public final static String API_URL = "/api/model-kit";
 
     @Autowired
@@ -30,6 +31,13 @@ public class Resource {
 
         return  modelKitList;
     }
+
+    @RequestMapping(value="/{modelKitId}", method = RequestMethod.GET)
+    public GundamModelKit getModelById(@PathVariable("modelKitId") final int modelKitId) {
+        return gundamModelKitService.getModelById(modelKitId);
+    }
+
+
 
     @RequestMapping(value="/add", method = RequestMethod.POST)
     public boolean addGunplaKit() {
