@@ -3,6 +3,6 @@ com/zakahmed/GundamModelKitApplication.class
 com/zakahmed/dao/GundamModelKitRepository.class
 com/zakahmed/exceptions/CustomExceptionHandler.class
 com/zakahmed/exceptions/GundamModelKitNotFoundException.class
+com/zakahmed/controller/GundamModelKitController.class
 com/zakahmed/domain/GundamModelKit.class
 com/zakahmed/exceptions/ApiError.class
-com/zakahmed/controller/Resource.class
