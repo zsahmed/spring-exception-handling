@@ -19,11 +19,15 @@ public class GundamModelKitService {
     @Autowired
     private GundamModelKitRepository gundamModelKitRepository;
 
+    //return all items from gunpla_db
     public List<GundamModelKit> getModelKits() {
         log.info("GundamModelKitService called");
         return gundamModelKitRepository.findAll();
     }
 
+    /* If a model exists, return model
+       else throw exception for client to consume
+     */
     public GundamModelKit getModelById(int id) {
         GundamModelKit kit = gundamModelKitRepository.findOne((long) id);
         if(kit == null) {
@@ -33,6 +37,7 @@ public class GundamModelKitService {
         return kit;
     }
 
+    //saves new model item to db
     public boolean save(GundamModelKit model) {
         gundamModelKitRepository.save(model);
 
