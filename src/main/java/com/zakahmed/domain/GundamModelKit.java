@@ -18,7 +18,7 @@ public class GundamModelKit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
     private String imageUrl;
     private String link;
     private String price;
