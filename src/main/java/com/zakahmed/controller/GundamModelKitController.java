@@ -4,9 +4,9 @@ import com.zakahmed.domain.GundamModelKit;
 import com.zakahmed.service.GundamModelKitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 /**
@@ -38,6 +38,18 @@ public class GundamModelKitController {
     public boolean addGunplaKit(@RequestBody GundamModelKit modelKit) {
         gundamModelKitService.save(modelKit);
         return true;
+    }
+
+    @RequestMapping(value="/update", method = RequestMethod.PUT)
+    public ResponseEntity updateGunplaKit(@RequestBody GundamModelKit gundamModelKit) throws Exception {
+        gundamModelKitService.updateModelKit(gundamModelKit);
+        return ResponseEntity.ok(null);
+    }
+
+    @RequestMapping(value="/{modelKitId}", method = RequestMethod.DELETE)
+    public ResponseEntity deleteModelById(@PathVariable("modelKitId") final int modelKitId) {
+        gundamModelKitService.deleteModelKit(modelKitId);
+        return ResponseEntity.ok(null);
     }
 
 }
