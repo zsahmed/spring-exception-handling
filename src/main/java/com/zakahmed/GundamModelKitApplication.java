@@ -19,9 +19,4 @@ public class GundamModelKitApplication {
         SpringApplication.run(GundamModelKitApplication.class, args);
     }
 
-//    @Autowired
-//    private GundamModelKitService gundamModelKitService;
-//
-//    @Autowired
-//    private GundamModelKitRepository gundamModelKitRepository;
 }
